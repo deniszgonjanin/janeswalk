@@ -23,6 +23,7 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'bootstrap-sass'
 end
 
 gem 'jquery-rails', '~> 2.0.0'
