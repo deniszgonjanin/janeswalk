@@ -1,1 +1,7 @@
-<%= render '/refinery/content_page' %>
+<section id='body_content' class="span6">
+  <h3>
+    <%=raw @page.title %>
+  </h3>
+  
+  <%=raw @page.content_for(:body) %>
+</section>

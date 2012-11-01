@@ -5,8 +5,21 @@ $header_blue: #d9e5f2;
 $header_orange: #d4d6d9;
 $header_yellow: #fbddc8;
 
-a{
-    color: #EF7625
+$text_blue: #369;
+$text_orange: #C90;
+
+a{ color: #EF7625 }
+
+p{ color: $text_blue }
+
+h2{ color: $text_blue }
+h3{ color: $text_orange }
+
+h4{ 
+    color: $text_blue;
+    border-color: $text_blue;
+    border-style: solid;
+    border-width: 0 0 1px 0;
 }
 
 div#site_bar{ display:none; }
@@ -15,7 +28,7 @@ nav{
     text-align: center;   
     .nav-header{
         a{
-            color: #369;
+            color: $text_blue;
             &:hover { background-color: transparent }
         }      
         .nav-list li a{
