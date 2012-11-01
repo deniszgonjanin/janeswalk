@@ -1,6 +1,10 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
 
+$header_blue: #d9e5f2;
+$header_orange: #d4d6d9;
+$header_yellow: #fbddc8;
+
 a{
     color: #EF7625
 }
@@ -10,15 +14,17 @@ nav{
     .nav-header{
         a{
             color: #369;
+            &:hover { background-color: transparent }
         }      
         .nav-list li a{
-            color: #EF7625
+            color: #EF7625;
+            &:hover { background-color: $header_blue }
         }
     }    
 }
 
 .sidebar-nav{
-    border-style: dashed;
+    //border-style: dashed;
     border-color: #999;
     border-width: 0 1px 0 0;
 }
@@ -26,7 +32,7 @@ nav{
 body{
     background-image: url("/assets/background.png");
     background-repeat: repeat-x;
-    background-position-x: 100px;
+    background-position-x: 80px;
 }
 
 .logo{
@@ -40,5 +46,5 @@ body{
     margin:0;
     padding:0;
     height: 93px;
-    margin-left: 80px;
+    margin-left: 60px;
 }
