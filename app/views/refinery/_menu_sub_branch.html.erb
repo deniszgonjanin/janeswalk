@@ -3,10 +3,10 @@
     css = "class='#{classes.join(' ')}'".html_safe
   end
 -%>
-<li class="nav-header"<%= ['', css].compact.join(' ').gsub(/\ *$/, '').html_safe %>>
-<%= link_to(menu_branch.title, refinery.url_for(menu_branch.url)) -%>
-  <% if ( (children = menu_branch.children unless hide_children).present? &&
-          (!local_assigns[:menu_levels] || menu_branch.ancestors.length < local_assigns[:menu_levels]) ) -%>
+<li<%= ['', css].compact.join(' ').gsub(/\ *$/, '').html_safe %>>
+<%= link_to(menu_sub_branch.title, refinery.url_for(menu_sub_branch.url)) -%>
+  <% if ( (children = menu_sub_branch.children unless hide_children).present? &&
+          (!local_assigns[:menu_levels] || menu_sub_branch.ancestors.length < local_assigns[:menu_levels]) ) -%>
     <ul class='nav nav-list'>
       <%= render :partial => '/refinery/menu_sub_branch', :collection => children,
                  :locals => {
@@ -14,7 +14,6 @@
                    :hide_children => !!hide_children,
                    :menu_levels => local_assigns[:menu_levels]
                  } -%>
-      <br/>
     </ul>
   <% end -%>
 </li>

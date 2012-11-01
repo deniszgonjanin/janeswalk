@@ -5,14 +5,14 @@
   <body>
     <%= site_bar -%>
     <%= render '/refinery/ie6check' if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
-    <div id="page_container">
-      <header id="header">
+    <div id="page_container" class="container-fluid">
+      <header id="header" class="jumbotron subhead">
         <%= render '/refinery/header' -%>
       </header>
       <section id="page">
         <%= yield %>
       </section>
-      <footer>
+      <footer class="footer">
         <%= render '/refinery/footer' -%>
       </footer>
     </div>

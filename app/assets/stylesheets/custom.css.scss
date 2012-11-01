@@ -1,1 +1,44 @@
 @import "bootstrap";
+@import "bootstrap-responsive";
+
+a{
+    color: #EF7625
+}
+
+nav{
+    text-align: center;   
+    .nav-header{
+        a{
+            color: #369;
+        }      
+        .nav-list li a{
+            color: #EF7625
+        }
+    }    
+}
+
+.sidebar-nav{
+    border-style: dashed;
+    border-color: #999;
+    border-width: 0 1px 0 0;
+}
+
+body{
+    background-image: url("/assets/background.png");
+    background-repeat: repeat-x;
+    background-position-x: 100px;
+}
+
+.logo{
+    padding: 2px 0 0 28px;
+}
+
+.title{
+    background-image: url("/assets/banner.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    margin:0;
+    padding:0;
+    height: 93px;
+    margin-left: 80px;
+}
