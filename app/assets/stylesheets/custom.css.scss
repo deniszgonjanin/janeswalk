@@ -10,7 +10,11 @@ $text_orange: #C90;
 
 a{ color: #EF7625 }
 
-p{ color: $text_blue }
+body{ color: $text_blue }
+
+#body_content{
+    max-width:570px;
+}
 
 h2{ color: $text_blue }
 h3{ color: $text_orange }
