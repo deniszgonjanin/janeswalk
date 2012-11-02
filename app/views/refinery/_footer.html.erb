@@ -1,4 +1,9 @@
-<p>
-  <%= t('.copyright', :year => Time.now.year,
-                      :site_name => Refinery::Core.site_name) %>
-</p>
+<div class="row">
+  <div class="sponsors offset2 span8">
+    <% Refinery::Sponsors::Sponsor.all().each do |sponsor| %>
+      <div class="sponsor span1">
+        <%= link_to image_tag("#{Refinery::Image.find(sponsor.image_id).url}"), sponsor.website_url %>
+      </div>
+    <% end %>
+  </div>
+</div>

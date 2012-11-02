@@ -67,3 +67,15 @@ body{
     height: 93px;
     margin-left: 60px;
 }
+
+.sponsors{
+    text-align: center;
+    padding: 20px 0 20px 0;
+    margin-bottom: 20px;
+    
+    .sponsor{
+        line-height: 100px;
+        height: 70px;
+        vertical-align: middle;
+    }
+}
