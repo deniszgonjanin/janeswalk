@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @sponsor.img %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Img</h1>
+    <p>
+      <%=raw @sponsor.img %>
+    </p>
+  </section>
+  <section>
+    <h1>Description</h1>
+    <p>
+      <%=raw @sponsor.description %>
+    </p>
+  </section>
+  <section>
+    <h1>Blurb</h1>
+    <p>
+      <%=raw @sponsor.blurb %>
+    </p>
+  </section>
+  <section>
+    <h1>Website Url</h1>
+    <p>
+      <%=raw @sponsor.website_url %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="sponsors">
+      <% @sponsors.each do |sponsor| %>
+        <li>
+          <%= link_to sponsor.img, refinery.sponsors_sponsor_path(sponsor) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>
