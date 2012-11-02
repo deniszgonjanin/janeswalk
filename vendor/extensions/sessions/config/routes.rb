@@ -19,7 +19,7 @@ Refinery::Core::Engine.routes.append do
 
   # Frontend routes
   namespace :walks do
-    resources :walks, :path => '', :only => [:index, :show]
+    resources :walks, :path => '', :only => [:index, :show, :create, :new]
   end
 
   # Admin routes

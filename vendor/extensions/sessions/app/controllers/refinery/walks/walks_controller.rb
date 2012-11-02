@@ -18,6 +18,14 @@ module Refinery
         # by swapping @page for @walk in the line below:
         present(@page)
       end
+      
+      def new
+        @walk = Walk.new
+      end
+      
+      def create
+        
+      end
 
     protected
 
