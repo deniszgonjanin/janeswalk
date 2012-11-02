@@ -1,0 +1,149 @@
+<%= form_for [refinery, :walks_admin, @walk] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @walk,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :session_id -%>
+    <%= f.number_field :session_id  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :guide_id -%>
+    <%= f.number_field :guide_id  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :guide_name -%>
+    <%= f.text_field :guide_name  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :guide_email -%>
+    <%= f.text_field :guide_email  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :guide_phone -%>
+    <%= f.text_field :guide_phone  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :starting_location -%>
+    <%= f.text_field :starting_location  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :end_location -%>
+    <%= f.text_field :end_location  -%>
+
+  </div>
+  
+  <div class='field'>
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <% [:route, :notes, :synopsis, :description, :credentials, :accessibility_notes].each_with_index do |part, part_index| %>
+          <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+            <%= link_to t("#{part}", :scope => "activerecord.attributes.refinery/walks/walk", :default => part.to_s.titleize), "##{part}" %>
+          </li>
+        <% end %>
+      </ul>
+      <div id='page_part_editors'>
+        <% [:route, :notes, :synopsis, :description, :credentials, :accessibility_notes].each do |part| %>
+          <div class='page_part' id='<%= part %>'>
+            <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :neighbourhoods -%>
+    <%= f.text_field :neighbourhoods  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :date -%>
+    <%= f.date_select :date  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :start_time -%>
+    <%= f.time_select :start_time  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :duration -%>
+    <%= f.number_field :duration  -%>
+
+  </div>
+  
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :language -%>
+    <%= f.text_field :language  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :distance -%>
+    <%= f.text_field :distance  -%>
+
+  </div>
+  
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :published -%>
+    <%= f.check_box :published, :checked => @walk[:published]  -%>
+
+  </div>
+  
+
+  </div>
+  
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :accesible -%>
+    <%= f.check_box :accesible, :checked => @walk[:accesible]  -%>
+
+  </div>
+  
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.walks.admin.walks.walk'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @walk.guide_name) %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>

@@ -1,8 +1,29 @@
 sk:
   refinery:
     plugins:
+      walks:
+        title: Walks
       sessions:
         title: Sessions
+    walks:
+      admin:
+        walks:
+          actions:
+            create_new: Pridať Walk
+            reorder: Preusporiadať Walks
+            reorder_done: Koniec radenia Walks
+          records:
+            title: Walks
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Walks. Kliknite na "Pridať Walk"
+              pre pridanie prvého walk.
+          walk:
+            view_live_html: Zobraziť náhľad walk<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť walk
+            delete: Zmazať walk
+      walks:
+        show:
+          other: Daľšie Walks
     sessions:
       admin:
         sessions:
@@ -13,7 +34,8 @@ sk:
           records:
             title: Sessions
             sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
-            no_items_yet: Nie sú vytvorené žiadne Sessions. Kliknite na "Pridať Session" pre pridanie prvého session.
+            no_items_yet: Nie sú vytvorené žiadne Sessions. Kliknite na "Pridať Session"
+              pre pridanie prvého session.
           session:
             view_live_html: Zobraziť náhľad session<br/><em>(otvorí sa v novom okne)</em>
             edit: Upraviť session
@@ -23,7 +45,30 @@ sk:
           other: Daľšie Sessions
   activerecord:
     attributes:
-      'refinery/sessions/session':
+      refinery/walks/walk:
+        session_id: Session
+        guide_id: Guide
+        guide_name: Guide Name
+        guide_email: Guide Email
+        guide_phone: Guide Phone
+        starting_location: Starting Location
+        end_location: End Location
+        route: Route
+        neighbourhoods: Neighbourhoods
+        date: Date
+        start_time: Start Time
+        duration: Duration
+        notes: Notes
+        language: Language
+        distance: Distance
+        synopsis: Synopsis
+        title: Title
+        published: Published
+        description: Description
+        credentials: Credentials
+        accesible: Accesible
+        accessibility_notes: Accessibility Notes
+      refinery/sessions/session:
         start: Start
         end: End
         status: Status

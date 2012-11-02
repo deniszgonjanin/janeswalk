@@ -1,8 +1,29 @@
 en:
   refinery:
     plugins:
+      walks:
+        title: Walks
       sessions:
         title: Sessions
+    walks:
+      admin:
+        walks:
+          actions:
+            create_new: Add New Walk
+            reorder: Reorder Walks
+            reorder_done: Done Reordering Walks
+          records:
+            title: Walks
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Walks yet. Click "Add New Walk" to add your
+              first walk.
+          walk:
+            view_live_html: View this walk live <br/><em>(opens in a new window)</em>
+            edit: Edit this walk
+            delete: Remove this walk forever
+      walks:
+        show:
+          other: Other Walks
     sessions:
       admin:
         sessions:
@@ -13,7 +34,8 @@ en:
           records:
             title: Sessions
             sorry_no_results: Sorry! There are no results found.
-            no_items_yet: There are no Sessions yet. Click "Add New Session" to add your first session.
+            no_items_yet: There are no Sessions yet. Click "Add New Session" to add
+              your first session.
           session:
             view_live_html: View this session live <br/><em>(opens in a new window)</em>
             edit: Edit this session
@@ -23,7 +45,30 @@ en:
           other: Other Sessions
   activerecord:
     attributes:
-      'refinery/sessions/session':
+      refinery/walks/walk:
+        session_id: Session
+        guide_id: Guide
+        guide_name: Guide Name
+        guide_email: Guide Email
+        guide_phone: Guide Phone
+        starting_location: Starting Location
+        end_location: End Location
+        route: Route
+        neighbourhoods: Neighbourhoods
+        date: Date
+        start_time: Start Time
+        duration: Duration
+        notes: Notes
+        language: Language
+        distance: Distance
+        synopsis: Synopsis
+        title: Title
+        published: Published
+        description: Description
+        credentials: Credentials
+        accesible: Accesible
+        accessibility_notes: Accessibility Notes
+      refinery/sessions/session:
         start: Start
         end: End
         status: Status

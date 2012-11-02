@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102025152) do
+ActiveRecord::Schema.define(:version => 20121102031720) do
 
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"
@@ -160,6 +160,34 @@ ActiveRecord::Schema.define(:version => 20121102025152) do
   end
 
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"
+
+  create_table "refinery_walks", :force => true do |t|
+    t.integer  "session_id"
+    t.integer  "guide_id"
+    t.string   "guide_name"
+    t.string   "guide_email"
+    t.string   "guide_phone"
+    t.string   "starting_location"
+    t.string   "end_location"
+    t.text     "route"
+    t.string   "neighbourhoods"
+    t.date     "date"
+    t.time     "start_time"
+    t.integer  "duration"
+    t.text     "notes"
+    t.string   "language"
+    t.float    "distance"
+    t.text     "synopsis"
+    t.string   "title"
+    t.boolean  "published"
+    t.text     "description"
+    t.text     "credentials"
+    t.boolean  "accesible"
+    t.text     "accessibility_notes"
+    t.integer  "position"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
 
   create_table "seo_meta", :force => true do |t|
     t.integer  "seo_meta_id"

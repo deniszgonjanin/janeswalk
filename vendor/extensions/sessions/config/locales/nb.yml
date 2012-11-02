@@ -1,8 +1,30 @@
 nb:
   refinery:
     plugins:
+      walks:
+        title: Walks
       sessions:
         title: Sessions
+    walks:
+      admin:
+        walks:
+          actions:
+            create_new: Lag en ny Walk
+            reorder: Endre rekkefølgen på Walks
+            reorder_done: Ferdig å endre rekkefølgen Walks
+          records:
+            title: Walks
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Walks enda. Klikk på "Lag en ny Walk" for å
+              legge til din første walk.
+          walk:
+            view_live_html: Vis hvordan denne walk ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne walk
+            delete: Fjern denne walk permanent
+      walks:
+        show:
+          other: Andre Walks
     sessions:
       admin:
         sessions:
@@ -13,9 +35,11 @@ nb:
           records:
             title: Sessions
             sorry_no_results: Beklager! Vi fant ikke noen resultater.
-            no_items_yet: Det er ingen Sessions enda. Klikk på "Lag en ny Session" for å legge til din første session.
+            no_items_yet: Det er ingen Sessions enda. Klikk på "Lag en ny Session"
+              for å legge til din første session.
           session:
-            view_live_html: Vis hvordan denne session ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            view_live_html: Vis hvordan denne session ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
             edit: Rediger denne session
             delete: Fjern denne session permanent
       sessions:
@@ -23,7 +47,30 @@ nb:
           other: Andre Sessions
   activerecord:
     attributes:
-      'refinery/sessions/session':
+      refinery/walks/walk:
+        session_id: Session
+        guide_id: Guide
+        guide_name: Guide Name
+        guide_email: Guide Email
+        guide_phone: Guide Phone
+        starting_location: Starting Location
+        end_location: End Location
+        route: Route
+        neighbourhoods: Neighbourhoods
+        date: Date
+        start_time: Start Time
+        duration: Duration
+        notes: Notes
+        language: Language
+        distance: Distance
+        synopsis: Synopsis
+        title: Title
+        published: Published
+        description: Description
+        credentials: Credentials
+        accesible: Accesible
+        accessibility_notes: Accessibility Notes
+      refinery/sessions/session:
         start: Start
         end: End
         status: Status

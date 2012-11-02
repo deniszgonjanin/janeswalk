@@ -1,8 +1,29 @@
 fr:
   refinery:
     plugins:
+      walks:
+        title: Walks
       sessions:
         title: Sessions
+    walks:
+      admin:
+        walks:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Walk
+            reorder: Réordonner les Walks
+            reorder_done: Fin de réordonnancement des Walks
+          records:
+            title: Walks
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Walk. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Walk" pour créer votre premi(er/ère) walk.
+          walk:
+            view_live_html: Voir ce(t/tte) walk <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) walk
+            delete: Supprimer définitivement ce(t/tte) walk
+      walks:
+        show:
+          other: Autres Walks
     sessions:
       admin:
         sessions:
@@ -12,8 +33,9 @@ fr:
             reorder_done: Fin de réordonnancement des Sessions
           records:
             title: Sessions
-            sorry_no_results: "Désolé ! Aucun résultat."
-            no_items_yet: 'Il n''y a actuellement aucun(e) Session. Cliquer sur "Créer un(e) nouve(au/l/lle) Session" pour créer votre premi(er/ère) session.'
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Session. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Session" pour créer votre premi(er/ère) session.
           session:
             view_live_html: Voir ce(t/tte) session <br/><em>(Ouvre une nouvelle fenêtre)</em>
             edit: Modifier ce(t/tte) session
@@ -23,7 +45,30 @@ fr:
           other: Autres Sessions
   activerecord:
     attributes:
-      'refinery/sessions/session':
+      refinery/walks/walk:
+        session_id: Session
+        guide_id: Guide
+        guide_name: Guide Name
+        guide_email: Guide Email
+        guide_phone: Guide Phone
+        starting_location: Starting Location
+        end_location: End Location
+        route: Route
+        neighbourhoods: Neighbourhoods
+        date: Date
+        start_time: Start Time
+        duration: Duration
+        notes: Notes
+        language: Language
+        distance: Distance
+        synopsis: Synopsis
+        title: Title
+        published: Published
+        description: Description
+        credentials: Credentials
+        accesible: Accesible
+        accessibility_notes: Accessibility Notes
+      refinery/sessions/session:
         start: Start
         end: End
         status: Status

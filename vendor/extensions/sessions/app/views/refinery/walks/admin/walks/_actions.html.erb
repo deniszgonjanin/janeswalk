@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Walks::Admin::WalksController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.walks_admin_walks_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_walks_admin_walk_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Walks::Admin::WalksController.sortable? && ::Refinery::Walks::Walk.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Walks"),
+                 refinery.walks_admin_walks_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Walks"),
+                 refinery.walks_admin_walks_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

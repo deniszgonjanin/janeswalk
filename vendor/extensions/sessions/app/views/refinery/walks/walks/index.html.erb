@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="walks">
+    <% @walks.each do |walk| %>
+      <li>
+        <%= link_to walk.guide_name, refinery.walks_walk_path(walk) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

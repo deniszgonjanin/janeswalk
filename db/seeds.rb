@@ -14,3 +14,7 @@ Refinery::Sponsors::Engine.load_seed
 
 # Added by Refinery CMS Sessions extension
 Refinery::Sessions::Engine.load_seed
+
+# Added by Refinery CMS Walks extension
+Refinery::Sessions::Engine.load_seed
+Refinery::Walks::Engine.load_seed
