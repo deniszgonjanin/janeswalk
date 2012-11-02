@@ -31,14 +31,14 @@
   <div class="control-group">
     <%= f.label :starting_location, class: 'control-label' -%>
     <div class="controls">
-      <%= f.text_field :starting_location  -%>
+      <%= f.text_field :starting_location, class: 'input-xlarge'  -%>
     </div>
   </div>
   
   <div class="control-group">
     <%= f.label :end_location, class: 'control-label' -%>
     <div class="controls">
-      <%= f.text_field :end_location  -%>
+      <%= f.text_field :end_location, class: 'input-xlarge'  -%>
     </div>
   </div>
   
@@ -66,7 +66,7 @@
   <div class="control-group">
     <%= f.label :neighbourhoods, 'Neighbourhood(s)', class: 'control-label' -%>
     <div class="controls">
-      <%= f.text_field :neighbourhoods  -%>
+      <%= f.text_field :neighbourhoods, class: 'input-xlarge' -%>
     </div>
   </div>
   
@@ -107,6 +107,10 @@
     <div class="controls">
       <%= f.check_box :accesible, :checked => @walk[:accesible]  -%>
     </div>
+  </div>
+  
+  <div class="actions controls">
+    <%= f.submit "Submit", class: 'btn' %>
   </div>
   
 <% end %>

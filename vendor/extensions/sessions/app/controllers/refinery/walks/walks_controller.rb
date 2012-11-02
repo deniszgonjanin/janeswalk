@@ -24,7 +24,13 @@ module Refinery
       end
       
       def create
+        @walk = Walk.new(params[:walk])
         
+        if @walk.save
+          redirect_to :root
+        else
+          redirect_to :root
+        end
       end
 
     protected
