@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Sessions::Admin::SessionsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.sessions_admin_sessions_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_sessions_admin_session_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Sessions::Admin::SessionsController.sortable? && ::Refinery::Sessions::Session.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Sessions"),
+                 refinery.sessions_admin_sessions_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Sessions"),
+                 refinery.sessions_admin_sessions_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

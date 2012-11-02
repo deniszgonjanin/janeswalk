@@ -1,0 +1,35 @@
+nl:
+  refinery:
+    plugins:
+      sessions:
+        title: Sessions
+    sessions:
+      admin:
+        sessions:
+          actions:
+            create_new: Maak een nieuwe Session
+            reorder: Wijzig de volgorde van de Sessions
+            reorder_done: Klaar met het wijzingen van de volgorde van de Sessions
+          records:
+            title: Sessions
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Sessions. Druk op 'Maak een nieuwe Session' om de eerste aan te maken.
+          session:
+            view_live_html: Bekijk deze session op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze session
+            delete: Verwijder deze session voor eeuwig
+      sessions:
+        show:
+          other: Andere Sessions
+  activerecord:
+    attributes:
+      'refinery/sessions/session':
+        start: Start
+        end: End
+        status: Status
+        submission_start: Submission Start
+        submission_end: Submission End
+        registration_start: Registration Start
+        registration_end: Registration End
+        title: Title
+        synopsis: Synopsis

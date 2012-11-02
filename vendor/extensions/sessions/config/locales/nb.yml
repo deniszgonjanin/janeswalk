@@ -1,0 +1,35 @@
+nb:
+  refinery:
+    plugins:
+      sessions:
+        title: Sessions
+    sessions:
+      admin:
+        sessions:
+          actions:
+            create_new: Lag en ny Session
+            reorder: Endre rekkefølgen på Sessions
+            reorder_done: Ferdig å endre rekkefølgen Sessions
+          records:
+            title: Sessions
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Sessions enda. Klikk på "Lag en ny Session" for å legge til din første session.
+          session:
+            view_live_html: Vis hvordan denne session ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne session
+            delete: Fjern denne session permanent
+      sessions:
+        show:
+          other: Andre Sessions
+  activerecord:
+    attributes:
+      'refinery/sessions/session':
+        start: Start
+        end: End
+        status: Status
+        submission_start: Submission Start
+        submission_end: Submission End
+        registration_start: Registration Start
+        registration_end: Registration End
+        title: Title
+        synopsis: Synopsis

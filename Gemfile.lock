@@ -46,6 +46,8 @@ GIT
 PATH
   remote: vendor/extensions
   specs:
+    refinerycms-sessions (1.0)
+      refinerycms-core (~> 2.0.8)
     refinerycms-sponsors (1.0)
       refinerycms-core (~> 2.0.8)
 
@@ -195,6 +197,7 @@ DEPENDENCIES
   rails (= 3.2.3)
   refinerycms!
   refinerycms-i18n (~> 2.0.0)
+  refinerycms-sessions!
   refinerycms-sponsors!
   sass-rails (~> 3.2.3)
   sqlite3

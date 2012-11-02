@@ -1,0 +1,35 @@
+en:
+  refinery:
+    plugins:
+      sessions:
+        title: Sessions
+    sessions:
+      admin:
+        sessions:
+          actions:
+            create_new: Add New Session
+            reorder: Reorder Sessions
+            reorder_done: Done Reordering Sessions
+          records:
+            title: Sessions
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Sessions yet. Click "Add New Session" to add your first session.
+          session:
+            view_live_html: View this session live <br/><em>(opens in a new window)</em>
+            edit: Edit this session
+            delete: Remove this session forever
+      sessions:
+        show:
+          other: Other Sessions
+  activerecord:
+    attributes:
+      'refinery/sessions/session':
+        start: Start
+        end: End
+        status: Status
+        submission_start: Submission Start
+        submission_end: Submission End
+        registration_start: Registration Start
+        registration_end: Registration End
+        title: Title
+        synopsis: Synopsis

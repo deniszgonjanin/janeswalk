@@ -1,0 +1,35 @@
+fr:
+  refinery:
+    plugins:
+      sessions:
+        title: Sessions
+    sessions:
+      admin:
+        sessions:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Session
+            reorder: Réordonner les Sessions
+            reorder_done: Fin de réordonnancement des Sessions
+          records:
+            title: Sessions
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Session. Cliquer sur "Créer un(e) nouve(au/l/lle) Session" pour créer votre premi(er/ère) session.'
+          session:
+            view_live_html: Voir ce(t/tte) session <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) session
+            delete: Supprimer définitivement ce(t/tte) session
+      sessions:
+        show:
+          other: Autres Sessions
+  activerecord:
+    attributes:
+      'refinery/sessions/session':
+        start: Start
+        end: End
+        status: Status
+        submission_start: Submission Start
+        submission_end: Submission End
+        registration_start: Registration Start
+        registration_end: Registration End
+        title: Title
+        synopsis: Synopsis

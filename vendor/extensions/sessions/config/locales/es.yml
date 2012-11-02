@@ -1,0 +1,36 @@
+es:
+  refinery:
+    plugins:
+      sessions:
+        title: Sessions
+#        article: masculino/femenino
+    sessions:
+      admin:
+        sessions:
+          actions:
+            create_new: Crear nuevo session
+            reorder: Reordenar sessions
+            reorder_done: Reordenación de sessions completada
+          records:
+            title: Sessions
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay sessions todavía. Pulsa en "Crear nuevo Session" para crear tu primer session.
+          session:
+            view_live_html: Ver este session como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este session
+            delete: Borrar este session para siempre
+      sessions:
+        show:
+          other: Otros sessions
+  activerecord:
+    attributes:
+      'refinery/sessions/session':
+        start: Start
+        end: End
+        status: Status
+        submission_start: Submission Start
+        submission_end: Submission End
+        registration_start: Registration Start
+        registration_end: Registration End
+        title: Title
+        synopsis: Synopsis

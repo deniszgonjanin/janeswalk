@@ -1,0 +1,35 @@
+sk:
+  refinery:
+    plugins:
+      sessions:
+        title: Sessions
+    sessions:
+      admin:
+        sessions:
+          actions:
+            create_new: Pridať Session
+            reorder: Preusporiadať Sessions
+            reorder_done: Koniec radenia Sessions
+          records:
+            title: Sessions
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Sessions. Kliknite na "Pridať Session" pre pridanie prvého session.
+          session:
+            view_live_html: Zobraziť náhľad session<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť session
+            delete: Zmazať session
+      sessions:
+        show:
+          other: Daľšie Sessions
+  activerecord:
+    attributes:
+      'refinery/sessions/session':
+        start: Start
+        end: End
+        status: Status
+        submission_start: Submission Start
+        submission_end: Submission End
+        registration_start: Registration Start
+        registration_end: Registration End
+        title: Title
+        synopsis: Synopsis

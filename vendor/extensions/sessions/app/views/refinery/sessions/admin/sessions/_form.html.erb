@@ -1,0 +1,86 @@
+<%= form_for [refinery, :sessions_admin, @session] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @session,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :start -%>
+    <%= f.date_select :start  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :end -%>
+    <%= f.date_select :end  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :status -%>
+    <%= f.text_field :status  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :submission_start -%>
+    <%= f.date_select :submission_start  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :submission_end -%>
+    <%= f.date_select :submission_end  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :registration_start -%>
+    <%= f.date_select :registration_start  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :registration_end -%>
+    <%= f.date_select :registration_end  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title  -%>
+
+  </div>
+  
+  <div class='field'>
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <% [:synopsis].each_with_index do |part, part_index| %>
+          <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+            <%= link_to t("#{part}", :scope => "activerecord.attributes.refinery/sessions/session", :default => part.to_s.titleize), "##{part}" %>
+          </li>
+        <% end %>
+      </ul>
+      <div id='page_part_editors'>
+        <% [:synopsis].each do |part| %>
+          <div class='page_part' id='<%= part %>'>
+            <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.sessions.admin.sessions.session'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @session.status) %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>
