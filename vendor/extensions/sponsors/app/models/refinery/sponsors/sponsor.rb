@@ -10,6 +10,11 @@ module Refinery
       validates :image_id, :presence => true, :uniqueness => true
       
       belongs_to :image
+      
+      def img
+        
+      end
+      
     end
   end
 end
