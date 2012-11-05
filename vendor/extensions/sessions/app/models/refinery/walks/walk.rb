@@ -15,7 +15,13 @@ module Refinery
                                   :title, :description, :credentials, 
                                   :accessibility_notes]
 
-      validates :guide_name, :presence => true, :uniqueness => true
+      validates :guide_name, :presence => true
+      validates :title, :presence => true
+      validates :guide_email, :presence => true
+      validates :starting_location, :presence => true
+      validates :end_location, :presence => true
+      validates :credentials, :presence => true
+      
     end
   end
 end

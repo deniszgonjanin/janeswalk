@@ -27,7 +27,7 @@ module Refinery
         @walk = Walk.new(params[:walk])
         
         if @walk.save
-          format.html { redirect_to @walk, :notice => 'Article was successfully created.' }
+          redirect_to '/thank-you'
         else
           render action: 'new'
         end
