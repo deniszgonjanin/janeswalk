@@ -1,74 +1,33 @@
-<%= form_for(@walk, :url => '/walks', :method => :post, html: {class: 'form-horizontal span6'}) do |f| -%>
-  
-  <div class="control-group">
-    <%= f.label :title, 'Walk Name', class: 'control-label' -%>
-    <div class="controls">
-      <%= f.text_field :title  -%>
+<%= simple_form_for(@walk, :url => '/walks', :method => :post, html: {class: 'form-horizontal span6'}) do |f| -%>
+
+  <% if notification = f.error_notification && false %>
+    <div class="alert alert-error fade in">
+      <a class="close" data-dismiss="alert" href="#">&times;</a>
+      <%= notification %>
     </div>
-  </div>
+  <% end %>
   
-  <div class="control-group">
-    <%= f.label :guide_name, 'Your Name', class: 'control-label' -%>
-    <div class="controls">
-      <%= f.text_field :guide_name  -%>
-    </div>
-  </div>
+  <legend>Submit a new Walk</legend>
   
-  <div class="control-group">
-    <%= f.label :guide_email, 'Email', class: 'control-label' -%>
-    <div class="controls">
-      <%= f.text_field :guide_email  -%>
-    </div>
-  </div>
+  <%= f.input :title, label: 'Walk Name' %>
   
-  <div class="control-group">
-    <%= f.label :guide_phone, 'Phone', class: 'control-label' -%>
-    <div class="controls">
-      <%= f.text_field :guide_phone  -%>
-    </div>
-  </div>
+  <%= f.input :guide_name, label: 'Your Name' %>
   
-  <div class="control-group">
-    <%= f.label :starting_location, class: 'control-label' -%>
-    <div class="controls">
-      <%= f.text_field :starting_location, class: 'input-xlarge'  -%>
-    </div>
-  </div>
+  <%= f.input :guide_email, label: 'Email' %>
   
-  <div class="control-group">
-    <%= f.label :end_location, class: 'control-label' -%>
-    <div class="controls">
-      <%= f.text_field :end_location, class: 'input-xlarge'  -%>
-    </div>
-  </div>
+  <%= f.input :guide_phone, label: 'Phone' %>
   
-  <div class="control-group">
-    <%= f.label :route, class: 'control-label' -%>
-    <div class="controls">
-      <%= f.text_area :route, :rows => "6", class: 'span4'  -%>
-    </div>
-  </div>
+  <%= f.input :starting_location %>
   
-  <div class="control-group">
-    <%= f.label :description, class: 'control-label' -%>
-    <div class="controls">
-      <%= f.text_area :description, :rows => "6", class: 'span4'  -%>
-    </div>
-  </div>
+  <%= f.input :end_location %>
   
-  <div class="control-group">
-    <%= f.label :credentials, 'About you', class: 'control-label' -%>
-    <div class="controls">
-      <%= f.text_area :credentials, :rows => "6", class: 'span4'  -%>
-    </div>
-  </div>
+  <%= f.input :route, :input_html => { :class => "span4", :rows => '6' } %>
   
-  <div class="control-group">
-    <%= f.label :neighbourhoods, 'Neighbourhood(s)', class: 'control-label' -%>
-    <div class="controls">
-      <%= f.text_field :neighbourhoods, class: 'input-xlarge' -%>
-    </div>
-  </div>
+  <%= f.input :description, :input_html => { :class => "span4", :rows => '6' } %>
+  
+  <%= f.input :credentials, label: 'About you', :input_html => { :class => "span4", :rows => '6' } %>
+  
+  <%= f.input :neighbourhoods, label: 'Neighbourhood(s)', :input_html => { :class => "input-xlarge" } %>
   
   <div class="control-group">
     <%= f.label :date, class: 'control-label' -%>
@@ -81,12 +40,7 @@
     </div>
   </div>
   
-  <div class="control-group">
-    <%= f.label :duration, 'Duration(hrs)', class: 'control-label' -%>
-    <div class="controls">
-      <%= f.number_field :duration, value: "3"  -%>
-    </div>
-  </div>
+   <%= f.input :duration, label: 'Duration(hrs)', :input_html => {value: '3'} %>
   
   <div class="control-group">
     <%= f.label :language, class: 'control-label' -%>
@@ -95,12 +49,7 @@
     </div>
   </div>
   
-  <div class="control-group">
-    <%= f.label :distance, 'Distance(km)', class: 'control-label' -%>
-    <div class="controls">
-      <%= f.number_field :distance, value: "3"  -%>
-    </div>
-  </div>
+  <%= f.input :distance, label: 'Distance(km)', :input_html => {value: '3'} %>
   
   <div class="control-group">
     <%= f.label :accesible, 'Accessible', class: 'control-label' -%>

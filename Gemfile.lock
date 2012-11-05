@@ -167,6 +167,9 @@ GEM
       tilt (~> 1.3)
     seo_meta (1.3.0)
       railties (>= 3.0.0)
+    simple_form (2.0.4)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -200,5 +203,6 @@ DEPENDENCIES
   refinerycms-sessions!
   refinerycms-sponsors!
   sass-rails (~> 3.2.3)
+  simple_form
   sqlite3
   uglifier (>= 1.0.3)
