@@ -1,4 +1,5 @@
 Refinery::Core::Engine.routes.append do
+  
 
   # Frontend routes
   namespace :sessions do

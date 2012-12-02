@@ -18,6 +18,12 @@ module Refinery
         # by swapping @page for @session in the line below:
         present(@page)
       end
+      
+      def schedule
+        @session = Session.find_by_status('active')
+        
+        present(@page)
+      end
 
     protected
 

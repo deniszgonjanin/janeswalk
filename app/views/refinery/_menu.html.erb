@@ -17,10 +17,11 @@
         <li class="nav-header">
           <a href="/the-walks">The Walks</a>    
             <ul class='nav nav-list'>
-                <li><a href="/the-walks/schedule">Schedule</a></li>
-                <li><a href="/the-walks/past-sessions">Past Sessions</a></li>
-                <li><a href="/the-walks/feedback">Feedback</a></li>
-                <li><a href="/the-walks/submit-a-walk">Submit a Walk</a></li>
+                <li><%= link_to("Schedule", refinery.sessions_session_path(Refinery::Sessions::Session.first))%></li>
+                <li><a href="/schedule">Schedule</a></li>
+                <li><a href="/sessions/">Past Sessions</a></li>
+                <li><a href="/walks/feedback">Feedback</a></li>
+                <li><a href="/walks/new">Submit a Walk</a></li>
               <br/>
             </ul>
         </li>
