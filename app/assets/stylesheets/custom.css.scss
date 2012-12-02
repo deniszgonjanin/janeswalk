@@ -10,7 +10,11 @@ $text_orange: #C90;
 
 a{ color: #EF7625 }
 
-body{ color: $text_blue }
+body{ 
+    color: $text_blue;
+    //original fonts on the old site
+    //font-family: verdana, tahoma, helvetica, arial;
+}
 
 #body_content{
     max-width:570px;
@@ -82,4 +86,25 @@ body{
 
 abbr{
     display:none;
+}
+
+.bottom_underline{
+    border-bottom-color: rgb(204, 153, 0);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    max-width:570px;
+}
+
+.walk_content{
+    margin: 0 9px 0 9px;
+    text-align: justify;
+    max-width:570px;
+}
+
+.guide{
+    float:right;
+    width:300px;
+    margin:0;
+    background-color: #FBEBBE;
+    border: 1px solid #CC9900;
 }

@@ -24,6 +24,9 @@ module Refinery
       
       belongs_to :refinery_session
       
+      scope :published, :conditions => { :published => true }
+      scope :english, :conditions => { :language => 'en' }
+      scope :french, :conditions => { :language => 'fr' }
     end
   end
 end

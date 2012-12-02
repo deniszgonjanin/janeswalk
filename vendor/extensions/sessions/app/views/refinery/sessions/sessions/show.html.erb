@@ -1,75 +1,44 @@
-<% content_for :body_content_title do %>
-  <%= @session.status %>
-<% end %>
+<section id='body_content' class="span10" >
+  <% content_for :body_content_title do %>
+    <p></p>
+  <% end %>
 
-<% content_for :body do %>
-  <section>
-    <h1>Start</h1>
-    <p>
-      <%=raw @session.start %>
-    </p>
-  </section>
-  <section>
-    <h1>End</h1>
-    <p>
-      <%=raw @session.end %>
-    </p>
-  </section>
-  <section>
-    <h1>Status</h1>
-    <p>
-      <%=raw @session.status %>
-    </p>
-  </section>
-  <section>
-    <h1>Submission Start</h1>
-    <p>
-      <%=raw @session.submission_start %>
-    </p>
-  </section>
-  <section>
-    <h1>Submission End</h1>
-    <p>
-      <%=raw @session.submission_end %>
-    </p>
-  </section>
-  <section>
-    <h1>Registration Start</h1>
-    <p>
-      <%=raw @session.registration_start %>
-    </p>
-  </section>
-  <section>
-    <h1>Registration End</h1>
-    <p>
-      <%=raw @session.registration_end %>
-    </p>
-  </section>
-  <section>
-    <h1>Title</h1>
-    <p>
-      <%=raw @session.title %>
-    </p>
-  </section>
-  <section>
-    <h1>Synopsis</h1>
-    <p>
-      <%=raw @session.synopsis %>
-    </p>
-  </section>
-<% end %>
+  <% content_for :body do %>
+    <section>
+      <h2><%=raw @session.title %></h2>
+    </section>
+    
+    <section>
+      <h3 class="bottom_underline">Synopsis</h3>
+      <p>
+        <%=raw @session.synopsis %>
+      </p>
+    </section>
+    
+    <section>
+      <h3 class="bottom_underline">Dates</h3>
+      <p>
+        <%=raw @session.timeframe %>
+      </p>
+    </section>
+    
+    <section>
+      <h3 class="bottom_underline">English Walks</h3>
+      <p>
+        <% @session.walks.published.english.each do |walk| %>
+          <%= link_to(walk.title, refinery.walks_walk_path(walk)) %>
+        <% end %>
+      </p>
+    </section>
+    
+    <section>
+      <h3 class="bottom_underline">French Walks</h3>
+      <p>
+        
+      </p>
+    </section>
+    
+  <% end %>
 
-<% content_for :side_body do %>
-  <aside>
-    <h2><%= t('.other') %></h2>
-    <ul id="sessions">
-      <% @sessions.each do |session| %>
-        <li>
-          <%= link_to session.status, refinery.sessions_session_path(session) %>
-        </li>
-      <% end %>
-    </ul>
-  </aside>
-<% end %>
-
-<%= render '/refinery/content_page' %>
+  <%= render '/refinery/content_page' %>
+</section>

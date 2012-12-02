@@ -6,6 +6,7 @@ module Refinery
       before_filter :find_page
 
       def index
+        @sessions = Session.past
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @session in the line below:
         present(@page)
@@ -16,12 +17,6 @@ module Refinery
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @session in the line below:
-        present(@page)
-      end
-      
-      def schedule
-        @session = Session.find_by_status('active')
-        
         present(@page)
       end
 

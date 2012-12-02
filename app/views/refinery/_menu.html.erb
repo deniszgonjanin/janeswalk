@@ -15,13 +15,12 @@
         </li>
         
         <li class="nav-header">
-          <a href="/the-walks">The Walks</a>    
+          <%= link_to("The Walks", refinery.sessions_session_path(Refinery::Sessions::Session.active))%>   
             <ul class='nav nav-list'>
-                <li><%= link_to("Schedule", refinery.sessions_session_path(Refinery::Sessions::Session.first))%></li>
-                <li><a href="/schedule">Schedule</a></li>
-                <li><a href="/sessions/">Past Sessions</a></li>
+                <li><%= link_to("Schedule", refinery.sessions_session_path(Refinery::Sessions::Session.active))%></li>
+                <li><%= link_to("Past Sessions", refinery.sessions_sessions_path)%></li>
                 <li><a href="/walks/feedback">Feedback</a></li>
-                <li><a href="/walks/new">Submit a Walk</a></li>
+                <li><a href="/walks/new"><img src="/assets/men.gif"/><p>Submit a Walk</p></a></li>
               <br/>
             </ul>
         </li>

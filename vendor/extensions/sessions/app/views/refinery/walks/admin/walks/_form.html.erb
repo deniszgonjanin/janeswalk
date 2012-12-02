@@ -6,13 +6,14 @@
   
   <div class='field'>
     <%= f.label :session_id -%>
-    <%= f.number_field :session_id  -%>
+    <%= f.collection_select(:session_id, Refinery::Sessions::Session.all, :id, :title) %>
 
   </div>
   
+  
   <div class='field'>
-    <%= f.label :guide_id -%>
-    <%= f.number_field :guide_id  -%>
+    <%= f.label :title -%>
+    <%= f.text_field :title  -%>
 
   </div>
   
@@ -85,32 +86,20 @@
   </div>
   
   <div class='field'>
-    <%= f.label :duration -%>
+    <%= f.label :duration, 'Duration (hours)' -%>
     <%= f.number_field :duration  -%>
-
-  </div>
-  
 
   </div>
   
   <div class='field'>
     <%= f.label :language -%>
-    <%= f.text_field :language  -%>
+    <%= f.select(:language, [['English', 'en'],['French', 'fr']]) -%>
 
   </div>
   
   <div class='field'>
-    <%= f.label :distance -%>
+    <%= f.label :distance, 'Distance (km)' -%>
     <%= f.text_field :distance  -%>
-
-  </div>
-  
-
-  </div>
-  
-  <div class='field'>
-    <%= f.label :title -%>
-    <%= f.text_field :title  -%>
 
   </div>
   
@@ -120,18 +109,10 @@
 
   </div>
   
-
-  </div>
-  
-
-  </div>
   
   <div class='field'>
     <%= f.label :accesible -%>
     <%= f.check_box :accesible, :checked => @walk[:accesible]  -%>
-
-  </div>
-  
 
   </div>
   

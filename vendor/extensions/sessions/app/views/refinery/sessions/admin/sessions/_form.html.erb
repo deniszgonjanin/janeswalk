@@ -4,6 +4,13 @@
               :include_object_name => true %>
 
   
+  
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title  -%>
+
+  </div>
+  
   <div class='field'>
     <%= f.label :start -%>
     <%= f.date_select :start  -%>
@@ -18,7 +25,7 @@
   
   <div class='field'>
     <%= f.label :status -%>
-    <%= f.text_field :status  -%>
+    <%= f.select(:status, [['Active', 'active'],['Inactive', 'inactive']])  -%>
 
   </div>
   
@@ -43,12 +50,6 @@
   <div class='field'>
     <%= f.label :registration_end -%>
     <%= f.date_select :registration_end  -%>
-
-  </div>
-  
-  <div class='field'>
-    <%= f.label :title -%>
-    <%= f.text_field :title  -%>
 
   </div>
   

@@ -1,153 +1,33 @@
-<% content_for :body_content_title do %>
-  <%= @walk.guide_name %>
-<% end %>
+<section class="span10" >
+  
+  <% content_for :body_content_title do %>
+    <p></p>
+  <% end %>
 
-<% content_for :body do %>
-  <section>
-    <h1>Session</h1>
-    <p>
-      <%=raw @walk.session_id %>
-    </p>
-  </section>
-  <section>
-    <h1>Guide</h1>
-    <p>
-      <%=raw @walk.guide_id %>
-    </p>
-  </section>
-  <section>
-    <h1>Guide Name</h1>
-    <p>
-      <%=raw @walk.guide_name %>
-    </p>
-  </section>
-  <section>
-    <h1>Guide Email</h1>
-    <p>
-      <%=raw @walk.guide_email %>
-    </p>
-  </section>
-  <section>
-    <h1>Guide Phone</h1>
-    <p>
-      <%=raw @walk.guide_phone %>
-    </p>
-  </section>
-  <section>
-    <h1>Starting Location</h1>
-    <p>
-      <%=raw @walk.starting_location %>
-    </p>
-  </section>
-  <section>
-    <h1>End Location</h1>
-    <p>
-      <%=raw @walk.end_location %>
-    </p>
-  </section>
-  <section>
-    <h1>Route</h1>
-    <p>
-      <%=raw @walk.route %>
-    </p>
-  </section>
-  <section>
-    <h1>Neighbourhoods</h1>
-    <p>
-      <%=raw @walk.neighbourhoods %>
-    </p>
-  </section>
-  <section>
-    <h1>Date</h1>
-    <p>
-      <%=raw @walk.date %>
-    </p>
-  </section>
-  <section>
-    <h1>Start Time</h1>
-    <p>
-      <%=raw @walk.start_time %>
-    </p>
-  </section>
-  <section>
-    <h1>Duration</h1>
-    <p>
-      <%=raw @walk.duration %>
-    </p>
-  </section>
-  <section>
-    <h1>Notes</h1>
-    <p>
-      <%=raw @walk.notes %>
-    </p>
-  </section>
-  <section>
-    <h1>Language</h1>
-    <p>
-      <%=raw @walk.language %>
-    </p>
-  </section>
-  <section>
-    <h1>Distance</h1>
-    <p>
-      <%=raw @walk.distance %>
-    </p>
-  </section>
-  <section>
-    <h1>Synopsis</h1>
-    <p>
-      <%=raw @walk.synopsis %>
-    </p>
-  </section>
-  <section>
-    <h1>Title</h1>
-    <p>
-      <%=raw @walk.title %>
-    </p>
-  </section>
-  <section>
-    <h1>Published</h1>
-    <p>
-      <%=raw @walk.published %>
-    </p>
-  </section>
-  <section>
-    <h1>Description</h1>
-    <p>
-      <%=raw @walk.description %>
-    </p>
-  </section>
-  <section>
-    <h1>Credentials</h1>
-    <p>
-      <%=raw @walk.credentials %>
-    </p>
-  </section>
-  <section>
-    <h1>Accesible</h1>
-    <p>
-      <%=raw @walk.accesible %>
-    </p>
-  </section>
-  <section>
-    <h1>Accessibility Notes</h1>
-    <p>
-      <%=raw @walk.accessibility_notes %>
-    </p>
-  </section>
-<% end %>
+    <section>
+      <h2><%=raw @walk.title %></h2>
+    </section>
+    <section>
+      <h3 class="bottom_underline">Description</h3>
+      
+      <div class="well guide">
+        <h5 class="guide_underline">
+      </div>
+      
+      <div class="walk_content">
+        <%=raw @walk.description %>
+      </div>
+    </section>
+    
+    <% unless @walk.route.blank? %>
+    <section>
+      <h3 class="bottom_underline">Route</h3>
+      <div class="content_padding">
+        <%= raw @walk.route %>
+      </div>
+    </section>
+    <% end %>
+    
 
-<% content_for :side_body do %>
-  <aside>
-    <h2><%= t('.other') %></h2>
-    <ul id="walks">
-      <% @walks.each do |walk| %>
-        <li>
-          <%= link_to walk.guide_name, refinery.walks_walk_path(walk) %>
-        </li>
-      <% end %>
-    </ul>
-  </aside>
-<% end %>
-
-<%= render '/refinery/content_page' %>
+  
+</section>
