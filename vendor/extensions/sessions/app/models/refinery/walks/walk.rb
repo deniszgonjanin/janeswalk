@@ -22,6 +22,8 @@ module Refinery
       validates :end_location, :presence => true
       validates :credentials, :presence => true
       
+      belongs_to :refinery_session
+      
     end
   end
 end

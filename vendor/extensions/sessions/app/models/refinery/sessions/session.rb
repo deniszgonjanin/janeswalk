@@ -8,6 +8,8 @@ module Refinery
       acts_as_indexed :fields => [:status, :title, :synopsis]
 
       validates :status, :presence => true, :uniqueness => true
+      
+      has_many :refinery_walks
     end
   end
 end
