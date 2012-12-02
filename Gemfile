@@ -56,3 +56,5 @@ gem 'refinerycms-i18n', '~> 2.0.0'
 
 gem 'refinerycms-sponsors', :path => 'vendor/extensions'
 gem 'refinerycms-sessions', :path => 'vendor/extensions'
+
+gem "refinerycms-news", '~> 2.0.0'

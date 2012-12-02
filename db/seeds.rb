@@ -18,3 +18,6 @@ Refinery::Sessions::Engine.load_seed
 # Added by Refinery CMS Walks extension
 Refinery::Sessions::Engine.load_seed
 Refinery::Walks::Engine.load_seed
+
+# Added by Refinery CMS News engine
+Refinery::News::Engine.load_seed

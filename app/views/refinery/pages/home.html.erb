@@ -1,3 +1,6 @@
 <section id='body_content' class="span10">
   <%=raw @page.content_for(:body) %>
+  
+  <% @items = Refinery::News::Item.latest(5) %>
+  <%= render :partial => '/refinery/news/items/recent_posts' %>
 </section>

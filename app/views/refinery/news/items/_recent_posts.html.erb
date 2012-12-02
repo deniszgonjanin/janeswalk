@@ -1,0 +1,13 @@
+<section id="recent_news_items">
+  <% @items.each do |item| %>
+    <article class="news_item_truncated">
+      <h2><%= link_to item.title, refinery.news_item_path(item) %></h2>
+      <p>
+        <small><%= t('.published') %> <%= l(item.publish_date, :format => :long) %></small>
+      </p>
+      <%= truncate  item.body, :length => 600,
+                    :omission => " ... #{link_to t('.read_more'), refinery.news_item_path(item)}",
+                    :preserve_html_tags => true %>
+    </article>
+  <% end %>
+</section>
