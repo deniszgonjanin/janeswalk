@@ -18,6 +18,17 @@
   </div>
   
   <div class='field'>
+    <%= f.label :image_id -%>
+    <%= render :partial => "/refinery/admin/image_picker", :locals => {
+            :f => f,
+            :field => :image_id,
+            :image => f.object.image,
+            :toggle_image_display => false
+          } %>
+
+  </div>
+  
+  <div class='field'>
     <%= f.label :guide_name -%>
     <%= f.text_field :guide_name  -%>
 
@@ -36,40 +47,26 @@
   </div>
   
   <div class='field'>
-    <%= f.label :starting_location -%>
-    <%= f.text_field :starting_location  -%>
+    <%= f.label :guide2_name -%>
+    <%= f.text_field :guide_name  -%>
 
   </div>
   
   <div class='field'>
-    <%= f.label :end_location -%>
-    <%= f.text_field :end_location  -%>
+    <%= f.label :guide2_email -%>
+    <%= f.text_field :guide_email  -%>
 
   </div>
   
   <div class='field'>
-    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
-      <ul id='page_parts'>
-        <% [:route, :notes, :synopsis, :description, :credentials, :accessibility_notes].each_with_index do |part, part_index| %>
-          <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
-            <%= link_to t("#{part}", :scope => "activerecord.attributes.refinery/walks/walk", :default => part.to_s.titleize), "##{part}" %>
-          </li>
-        <% end %>
-      </ul>
-      <div id='page_part_editors'>
-        <% [:route, :notes, :synopsis, :description, :credentials, :accessibility_notes].each do |part| %>
-          <div class='page_part' id='<%= part %>'>
-            <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
-          </div>
-        <% end %>
-      </div>
-    </div>
+    <%= f.label :guide2_phone -%>
+    <%= f.text_field :guide_phone  -%>
 
   </div>
   
   <div class='field'>
-    <%= f.label :neighbourhoods -%>
-    <%= f.text_field :neighbourhoods  -%>
+    <%= f.label :media -%>
+    <%= f.check_box :media, :checked => @walk[:media]  -%>
 
   </div>
   
@@ -98,21 +95,94 @@
   </div>
   
   <div class='field'>
+    <%= f.label :starting_location -%>
+    <%= f.text_field :starting_location  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :end_location -%>
+    <%= f.text_field :end_location  -%>
+
+  </div>
+  
+  <div class='field'>
     <%= f.label :distance, 'Distance (km)' -%>
     <%= f.text_field :distance  -%>
 
   </div>
   
   <div class='field'>
-    <%= f.label :published -%>
-    <%= f.check_box :published, :checked => @walk[:published]  -%>
+    <%= f.label :neighbourhoods -%>
+    <%= f.text_field :neighbourhoods  -%>
 
   </div>
-  
   
   <div class='field'>
     <%= f.label :accesible -%>
     <%= f.check_box :accesible, :checked => @walk[:accesible]  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :marshal_name -%>
+    <%= f.text_field :marshal_name  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :marshal_email -%>
+    <%= f.text_field :marshal_email  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :marshal_phone -%>
+    <%= f.text_field :marshal_phone  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :marshal2_name -%>
+    <%= f.text_field :marshal2_name  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :marshal2_email -%>
+    <%= f.text_field :marshal2_email  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :marshal2_phone -%>
+    <%= f.text_field :marshal2_phone  -%>
+
+  </div>
+  
+  <div class='field'>
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <% [:route, :notes, :synopsis, :description, :credentials, :accessibility_notes].each_with_index do |part, part_index| %>
+          <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+            <%= link_to t("#{part}", :scope => "activerecord.attributes.refinery/walks/walk", :default => part.to_s.titleize), "##{part}" %>
+          </li>
+        <% end %>
+      </ul>
+      <div id='page_part_editors'>
+        <% [:route, :notes, :synopsis, :description, :credentials, :accessibility_notes].each do |part| %>
+          <div class='page_part' id='<%= part %>'>
+            <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :published -%>
+    <%= f.check_box :published, :checked => @walk[:published]  -%>
 
   </div>
   
