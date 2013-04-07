@@ -9,57 +9,88 @@
   
   <legend>Submit a new Walk</legend>
   
-  <%= f.input :title, label: 'Walk Name' %>
+  <div class="well">
+    <%= f.input :title, label: 'Title of Walk' %>
   
-  <%= f.input :guide_name, label: 'Your Name' %>
-  
-  <%= f.input :guide_email, label: 'Email' %>
-  
-  <%= f.input :guide_phone, label: 'Phone' %>
-  
-  <%= f.input :starting_location %>
-  
-  <%= f.input :end_location %>
-  
-  <%= f.input :route, :input_html => { :class => "span4", :rows => '6' } %>
-  
-  <%= f.input :description, :input_html => { :class => "span4", :rows => '6' } %>
-  
-  <%= f.input :credentials, label: 'About you', :input_html => { :class => "span4", :rows => '6' } %>
-  
-  <%= f.input :neighbourhoods, label: 'Neighbourhood(s)', :input_html => { :class => "input-xlarge" } %>
-  
-  <div class="control-group">
-    <%= f.label :date, class: 'control-label' -%>
-    <div class="controls">
-      <%= f.text_field :date, value: "12-02-2012", class: 'datepicker input-small'  -%>
-      <%= f.text_field :start_time, value: "12:00", class: 'timepicker input-small'  -%>
-      <span class="add-on">
-          <i class="icon-time"></i>
-      </span>
-    </div>
+    <%= f.input :description, placeholder: 'Type your description here.', :input_html => { :class => "span4", :rows => '6', :style => "width:auto;" }, hint: "Tell us what your walk is about and why you want to share it.   Include links to other websites or books if you like." %>
+    
+    <!-- Need Image -->
+    
   </div>
   
-   <%= f.input :duration, label: 'Duration(hrs)', :input_html => {value: '3'} %>
   
-  <div class="control-group">
-    <%= f.label :language, class: 'control-label' -%>
-    <div class="controls">
-      <%= f.select :language, [['English','en'], ['French','fr']]  -%>
-    </div>
+  <div class="well">
+    <legend>Organizer / Tour Leader</legend>
+    <%= f.input :guide_name, label: 'Name' %>
+  
+    <%= f.input :guide_email, label: 'Email' %>
+  
+    <%= f.input :guide_phone, label: 'Phone' %>
+    
+    <!-- Additional Tour Leader Info -->
+    
+    <%= f.input :credentials, label: 'About the Tour Leaders', :input_html => { :class => "span4", :rows => '6', :style => "width:auto;"  }, placeholder: "1-2 sentences giving leader(s) background and why they want to share this walk" %>
+    
+    <!-- Need willing to talk to media check -->
   </div>
   
-  <%= f.input :distance, label: 'Distance(km)', :input_html => {value: '3'} %>
-  
-  <div class="control-group">
-    <%= f.label :accesible, 'Accessible', class: 'control-label' -%>
-    <div class="controls">
-      <%= f.check_box :accesible, :checked => @walk[:accesible]  -%>
+  <div class="well">
+    <legend>Walk Logistics</legend>
+    
+    <div class="control-group">
+      <%= f.label :date, class: 'control-label' -%>
+      <div class="controls">
+        <%= f.text_field :date, value: "12-02-2012", class: 'datepicker input-small'  -%>
+        <%= f.text_field :start_time, value: "12:00", class: 'timepicker input-small'  -%>
+        <span class="add-on">
+            <i class="icon-time"></i>
+        </span>
+      </div>
     </div>
+    
+    <%= f.input :duration, label: 'Duration(hrs)', :input_html => {value: '3'} %>
+    
+    <div class="control-group">
+      <%= f.label :language, class: 'control-label' -%>
+      <div class="controls">
+        <%= f.select :language, [['English','en'], ['French','fr']]  -%>
+      </div>
+    </div>
+    
+    <%= f.input :starting_location, label: 'Starting Point', :input_html => { :class => "input-xlarge" }, placeholder: "The place where people should meet" %>
+
+    <%= f.input :end_location, label: 'End Point', :input_html => { :class => "input-xlarge" }, placeholder: "Where people will be when the walk is over." %>
+    
+    <%= f.input :distance, label: 'Distance(km)', :input_html => {value: '3'} %>
+    
+    <%= f.input :neighbourhoods, label: 'Neighbourhood(s)', :input_html => { :class => "input-xlarge" }, placeholder: "e.g., the Byward Market" %>
+    
+    <%= f.input :route, :input_html => { :class => "span4", :rows => '6', :style => "width:auto;" }, placeholder: "Describe the general route the walk will follow." %>
+    
+    <!-- Need map marker placement -->
+    
+    <div class="control-group">
+      <%= f.label :accesible, 'Accessible', class: 'control-label' -%>
+      <div class="controls">
+        <%= f.check_box :accesible, :checked => @walk[:accesible]  -%>
+        <span class="help-block">Is the route accessible for people with wheelchairs, scooters, strollers, etc?</span>
+      </div>
+    </div>
+    
+    <%= f.input :accessibility_notes, :input_html => { :class => "span4", :rows => '6', :style => "width:auto;"  }, placeholder: "Note specific obstacles or exceptions, such as whether there are some steps or you will cross a grassy area." %>
+    
   </div>
+  
+  <div class="well">
+    <legend>Marshals</legend>
+    <p>If you or your group have volunteers that can act as marshals for your walk, please provide their contact information.<p>
+      
+    <!-- Need sections for marshal 1 and 2 -->
+  </div>
+  
   
   <div class="actions controls">
-    <%= f.submit "Submit", class: 'btn' %>
+    <%= f.submit "Submit Walk", class: 'btn btn-primary btn-large' %>
   </div>
   
 <% end %>

@@ -14,6 +14,8 @@ body{
     color: $text_blue;
     //original fonts on the old site
     //font-family: verdana, tahoma, helvetica, arial;
+    font-size: 16px;
+    line-height: 1.5em;
 }
 
 #body_content{
@@ -107,4 +109,14 @@ abbr{
     margin:0;
     background-color: #FBEBBE;
     border: 1px solid #CC9900;
+}
+
+.font-size-large {
+    font-size: 1.5em !important;
+    line-height: 1.3em;
+}
+
+.font-size-small {
+    font-size: 0.75em !important;
+    line-height: 1.0em;
 }
