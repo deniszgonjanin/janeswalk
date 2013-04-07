@@ -35,7 +35,6 @@ module Refinery
       validates :starting_location, :presence => true
       validates :end_location, :presence => true
       validates :credentials, :presence => true
-      validates :media, :presence => true
       
       belongs_to :refinery_session
       
