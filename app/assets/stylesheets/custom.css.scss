@@ -14,7 +14,7 @@ body{
     color: $text_blue;
     //original fonts on the old site
     //font-family: verdana, tahoma, helvetica, arial;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5em;
 }
 
@@ -109,6 +109,39 @@ abbr{
     margin:0;
     background-color: #FBEBBE;
     border: 1px solid #CC9900;
+		padding: 0 7px 0 7px;
+		font-size: 14px;
+		
+		.underline{
+			width:100%;
+			border-width: 0 0 1px 0;
+			border-color: #336699;
+			border-style: solid;
+		}
+		
+		.left{
+			width: 35%;
+			display: inline-block;
+			text-align: right;
+			font-weight: bold;
+		}
+		
+		.right{
+			
+		}
+}
+
+.walk-info{
+	section{
+		display: inline-block;
+	}
+	
+	img{
+		display: inline-block;
+		float: right;
+		margin-left: 10px;
+		width: 250px;
+	}
 }
 
 .font-size-large {

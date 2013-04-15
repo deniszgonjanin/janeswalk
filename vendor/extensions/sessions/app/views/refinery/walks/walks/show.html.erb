@@ -3,31 +3,100 @@
   <% content_for :body_content_title do %>
     <p></p>
   <% end %>
-
-    <section>
-      <h2><%=raw @walk.title %></h2>
-    </section>
-    <section>
-      <h3 class="bottom_underline">Description</h3>
-      
-      <div class="well guide">
-        <h5 class="guide_underline">
+  
+    <div class="well guide">
+      <h5 class="underline">Guide</h5>
+      <div class="info">
+        <span class="left">Name: </span>
+        <span class="right"><%= raw @walk.guide_name %></span>
       </div>
       
-      <div class="walk_content">
-        <%=raw @walk.description %>
+      <h5 class="underline">When</h5>
+      <div class="info">
+        <span class="left">Date: </span>
+        <span class="right"><%= raw @walk.date.strftime("%e %B %Y") %></span>
       </div>
-    </section>
-    
-    <% unless @walk.route.blank? %>
-    <section>
-      <h3 class="bottom_underline">Route</h3>
-      <div class="content_padding">
-        <%= raw @walk.route %>
+      <div class="info">
+        <span class="left">Time: </span>
+        <span class="right"><%= raw @walk.start_time.strftime("%l %p") %></span>
       </div>
-    </section>
-    <% end %>
+      <div class="info">
+        <span class="left">Duration: </span>
+        <span class="right"><%= raw @walk.duration %> hours</span>
+      </div>
+      <div class="info">
+        <span class="left">Language: </span>
+        <span class="right">
+        <% if @walk.language == 'en' %>
+          English
+        <% else %>
+          French
+        <% end %>
+        </span>
+      </div>
+      
+      <h5 class="underline">Where</h5>
+      <div class="info">
+        <span class="left">Start: </span>
+        <span class="right"><%= raw @walk.starting_location %></span>
+      </div>
+      <div class="info">
+        <span class="left">End: </span>
+        <span class="right"><%= raw @walk.end_location %></span>
+      </div>
+      <div class="info">
+        <span class="left">Area: </span>
+        <span class="right"><%= raw @walk.neighbourhoods %></span>
+      </div>
+      <div class="info">
+        <span class="left">Length: </span>
+        <span class="right"><%= raw @walk.distance %> km</span>
+      </div>
+      
+      <h5 class="underline">Accessibility:</h5>
+      <div class="info">
+        <%= raw @walk.accessibility_notes %>
+      </div>
+    </div>
     
-
+    <div class="walk-info">
+      <section>
+        <h2><%=raw @walk.title %></h2>
+      </section>
+      <section>
+        <h3 class="bottom_underline">Overview</h3>
+      
+        <div class="walk_content">
+          <%=raw @walk.synopsis %>
+        </div>
+      </section>
+      
+      <section>
+        <h3 class="bottom_underline">Description</h3>
+      
+        <div class="walk_content">
+          <%= image_tag("#{Refinery::Image.find(@walk.image_id).url}") %>
+          <%=raw @walk.description %>
+        </div>
+      </section>
+    
+      <% unless @walk.route.blank? %>
+      <section>
+        <h3 class="bottom_underline">Route</h3>
+        <div class="walk_content">
+          <%= raw @walk.route %>
+        </div>
+      </section>
+      <% end %>
+      
+      <section>
+        <h3 class="bottom_underline">About</h3>
+      
+        <div class="walk_content">
+          <%=raw @walk.credentials %>
+        </div>
+      </section>
+    
+    </div>
   
 </section>
