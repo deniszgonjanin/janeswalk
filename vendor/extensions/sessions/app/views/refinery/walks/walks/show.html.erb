@@ -63,6 +63,8 @@
       <section>
         <h2><%=raw @walk.title %></h2>
       </section>
+      
+      <% unless @walk.synopsis.blank? %>
       <section>
         <h3 class="bottom_underline">Overview</h3>
       
@@ -70,15 +72,20 @@
           <%=raw @walk.synopsis %>
         </div>
       </section>
+      <% end %>
       
+      <% unless @walk.description.blank? %>
       <section>
         <h3 class="bottom_underline">Description</h3>
       
         <div class="walk_content">
-          <%= image_tag("#{Refinery::Image.find(@walk.image_id).url}") %>
+          <% if @walk.image_id %>
+            <%= image_tag("#{Refinery::Image.find(@walk.image_id).url}", class: 'img-polaroid') %>
+          <% end %>
           <%=raw @walk.description %>
         </div>
       </section>
+      <% end %>
     
       <% unless @walk.route.blank? %>
       <section>
@@ -89,6 +96,7 @@
       </section>
       <% end %>
       
+      <% unless @walk.credentials.blank? %>
       <section>
         <h3 class="bottom_underline">About</h3>
       
@@ -96,6 +104,7 @@
           <%=raw @walk.credentials %>
         </div>
       </section>
+      <% end %>
     
     </div>
   
