@@ -76,6 +76,12 @@
     <!-- Need map marker placement -->
     
     <div class="control-group">
+      <%= f.label :map_marker, 'Map: (Move the map marker to the starting location)', class: 'control-label' -%>
+      <%= f.hidden_field :map_marker, :value => '45.435,-75.7' %>
+      <%= render :partial => 'map_edit' %>
+    </div>
+    
+    <div class="control-group">
       <%= f.label :accesible, 'Accessible', class: 'control-label' -%>
       <div class="controls">
         <%= f.check_box :accesible, :checked => @walk[:accesible]  -%>

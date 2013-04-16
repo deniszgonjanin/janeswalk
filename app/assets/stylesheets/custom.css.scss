@@ -148,6 +148,16 @@ abbr{
 	}
 }
 
+#mp_canvas{
+	height:400px !important; 
+	width:570px; 
+	border:1px solid #ff9933;
+	
+	img{
+		max-width: none !important;
+	}
+}
+
 .font-size-large {
     font-size: 1.5em !important;
     line-height: 1.3em;

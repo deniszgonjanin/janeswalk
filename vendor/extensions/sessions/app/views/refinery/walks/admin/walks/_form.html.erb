@@ -67,7 +67,11 @@
   <div class='field'>
     <%= f.label :media -%>
     <%= f.check_box :media, :checked => @walk[:media]  -%>
-
+  </div>
+  
+  <div class="field">
+    <%= f.hidden_field :map_marker %>
+    <%= render :partial => 'map_edit', :locals => {map_marker: @walk.map_marker } %>
   </div>
   
   <div class='field'>

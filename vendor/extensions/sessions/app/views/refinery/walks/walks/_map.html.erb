@@ -1,0 +1,31 @@
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBP8WOi0ATaGgdhdR9MXzR2-lORJ9eF_ng&sensor=true">
+</script>
+<script type="text/javascript">
+  window.onload = function() {
+    var lat_long = "<%= map_marker %>";
+    if (lat_long.indexOf(',') === -1) lat_long = '45.435,-75.7';
+
+    lat_long_array = lat_long.split(',');
+    lat = lat_long_array.shift();
+    lng = lat_long_array.shift();
+
+    var myOptions = {
+      center: new google.maps.LatLng(lat, lng),
+      zoom: 14,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("mp_canvas"),
+        myOptions);
+
+    var ottawa = new google.maps.LatLng(lat, lng);
+
+    var marker = new google.maps.Marker({
+        position: ottawa, 
+        map: map,
+        title:"Central Experimental Farm"
+    }); 
+  }
+</script>
+
+<label><b>Location: <b> </label>
+<div name='mp_canvas' id="mp_canvas" ></div>
