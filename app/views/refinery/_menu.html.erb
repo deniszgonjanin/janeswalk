@@ -11,7 +11,7 @@
     <nav id='<%= dom_id %>' class='<%= css %>'>
       <ul class="nav nav-list">
         <li class="nav-header">
-          <a href="/">Home</a>
+          <a href="/"><%= t :home %></a>
           <ul class='nav nav-list'>
             <% if I18n.locale.to_s == 'en' %>
               <li><a href="/fr/">Français</a></li>
@@ -22,7 +22,7 @@
         </li>
         
         <li class="nav-header">
-          <%= link_to("The Walks", refinery.sessions_session_path(Refinery::Sessions::Session.active))%>   
+          <%= link_to("#{t :walks}", refinery.sessions_session_path(Refinery::Sessions::Session.active))%>   
             <ul class='nav nav-list'>
                 <li><%= link_to("#{t :schedule}", refinery.sessions_session_path(Refinery::Sessions::Session.active))%></li>
                 <li><%= link_to("#{t :past}", refinery.sessions_sessions_path)%></li>

@@ -2,11 +2,13 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 fr:
-  hello: "Hello world"
+  home: "Page d’accueil"
   schedule: "Horaire"
   past: "Sessions historiques"
   feedback: "Réaction"
   submit_a_walk: "Soumettre une proposition de promenade"
+  background: "L’historique"
+  walks: "Les promenades"
   
   guide: "Guide"
   name: "Nom"
