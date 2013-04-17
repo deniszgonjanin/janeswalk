@@ -24,9 +24,13 @@
     <section>
       <h3 class="bottom_underline">English Walks</h3>
       <p>
+        <ul>
         <% @session.walks.published.english.each do |walk| %>
-          <%= link_to(walk.title, refinery.walks_walk_path(walk)) %>
+          <li>
+            <%= link_to(walk.title, refinery.walks_walk_path(walk)) %>
+          </li>
         <% end %>
+        </ul>
       </p>
     </section>
     
