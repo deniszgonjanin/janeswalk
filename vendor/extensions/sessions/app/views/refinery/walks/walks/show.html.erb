@@ -5,55 +5,55 @@
   <% end %>
   
     <div class="well guide">
-      <h5 class="underline">Guide</h5>
+      <h5 class="underline"><%= t :guide %>:</h5>
       <div class="info">
-        <span class="left">Name: </span>
+        <span class="left"><%= t :name %>: </span>
         <span class="right"><%= raw @walk.guide_name %></span>
       </div>
       
-      <h5 class="underline">When</h5>
+      <h5 class="underline"><%= t :when %></h5>
       <div class="info">
-        <span class="left">Date: </span>
-        <span class="right"><%= raw @walk.date.strftime("%e %B %Y") %></span>
+        <span class="left"><%= t :date_string %>: </span>
+        <span class="right"><%= l(@walk.date, :format => :long) %></span>
       </div>
       <div class="info">
-        <span class="left">Time: </span>
+        <span class="left"><%= t :time_string %>: </span>
         <span class="right"><%= raw @walk.start_time.strftime("%l %p") %></span>
       </div>
       <div class="info">
-        <span class="left">Duration: </span>
+        <span class="left"><%= t :duration %>: </span>
         <span class="right"><%= raw @walk.duration %> hours</span>
       </div>
       <div class="info">
-        <span class="left">Language: </span>
+        <span class="left"><%= t :language %>: </span>
         <span class="right">
         <% if @walk.language == 'en' %>
           English
         <% else %>
-          French
+          Français
         <% end %>
         </span>
       </div>
       
-      <h5 class="underline">Where</h5>
+      <h5 class="underline"><%= t :where %></h5>
       <div class="info">
-        <span class="left">Start: </span>
+        <span class="left"><%= t :start %>: </span>
         <span class="right"><%= raw @walk.starting_location %></span>
       </div>
       <div class="info">
-        <span class="left">End: </span>
+        <span class="left"><%= t :end %>: </span>
         <span class="right"><%= raw @walk.end_location %></span>
       </div>
       <div class="info">
-        <span class="left">Area: </span>
+        <span class="left"><%= t :area %>: </span>
         <span class="right"><%= raw @walk.neighbourhoods %></span>
       </div>
       <div class="info">
-        <span class="left">Length: </span>
+        <span class="left"><%= t :distance %>: </span>
         <span class="right"><%= raw @walk.distance %> km</span>
       </div>
       
-      <h5 class="underline">Accessibility:</h5>
+      <h5 class="underline"><%= t :accessibility %>:</h5>
       <div class="info">
         <%= raw @walk.accessibility_notes %>
       </div>

@@ -7,3 +7,31 @@ fr:
   past: "Sessions historiques"
   feedback: "Réaction"
   submit_a_walk: "Soumettre une proposition de promenade"
+  
+  guide: "Guide"
+  name: "Nom"
+  when: "Quand"
+  date: "Date"
+  time: "Heure"
+  duration: "Durée"
+  language: "Langue"
+  where: "Où"
+  start: "Départ"
+  end: "Fin"
+  area: "Quartier"
+  distance: "Distance"
+  accessibility: "Accès"
+  
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+      
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    am: "am"
+    pm: "pm"
