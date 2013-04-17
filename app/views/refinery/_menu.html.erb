@@ -12,6 +12,13 @@
       <ul class="nav nav-list">
         <li class="nav-header">
           <a href="/">Home</a>
+          <ul class='nav nav-list'>
+            <% if I18n.locale.to_s == 'en' %>
+              <li><a href="/fr/">Français</a></li>
+            <% else %>
+              <li><a href="/en/">English</a></li>
+            <% end %>
+          </ul>
         </li>
         
         <li class="nav-header">
