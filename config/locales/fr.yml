@@ -1,9 +1,9 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
+fr:
   hello: "Hello world"
-  schedule: "Schedule"
-  past: "Past Events"
-  feedback: "Feedback"
-  submit_a_walk: "Submit a Walk"
+  schedule: "Horaire"
+  past: "Sessions historiques"
+  feedback: "Réaction"
+  submit_a_walk: "Soumettre une proposition de promenade"
