@@ -14,9 +14,9 @@
           <a href="/"><%= t :home %></a>
           <ul class='nav nav-list'>
             <% if I18n.locale.to_s == 'en' %>
-              <li><a href="/fr/">Français</a></li>
+              <li><a href="/fr/<%= request.path %>">Français</a></li>
             <% else %>
-              <li><a href="/en/">English</a></li>
+              <li><a href="/en/<%= request.path %>">English</a></li>
             <% end %>
           </ul>
         </li>
