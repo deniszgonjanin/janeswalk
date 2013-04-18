@@ -37,7 +37,13 @@
     <section>
       <h3 class="bottom_underline">French Walks</h3>
       <p>
-        
+        <ul>
+        <% @session.walks.published.french.each do |walk| %>
+          <li>
+            <%= link_to(walk.title, refinery.walks_walk_path(walk)) %>
+          </li>
+        <% end %>
+        </ul>
       </p>
     </section>
     
