@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130422155652) do
+ActiveRecord::Schema.define(:version => 20130422162738) do
 
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"
@@ -213,7 +213,7 @@ ActiveRecord::Schema.define(:version => 20130422155652) do
     t.string   "neighbourhoods"
     t.date     "date"
     t.time     "start_time"
-    t.decimal  "duration"
+    t.decimal  "duration",            :precision => 4, :scale => 2
     t.text     "notes"
     t.string   "language"
     t.float    "distance"
@@ -225,8 +225,8 @@ ActiveRecord::Schema.define(:version => 20130422155652) do
     t.boolean  "accesible"
     t.text     "accessibility_notes"
     t.integer  "position"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
     t.integer  "image_id"
     t.string   "guide2_name"
     t.string   "guide2_email"
