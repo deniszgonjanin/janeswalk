@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130407033125) do
+ActiveRecord::Schema.define(:version => 20130422155652) do
 
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"
@@ -213,7 +213,7 @@ ActiveRecord::Schema.define(:version => 20130407033125) do
     t.string   "neighbourhoods"
     t.date     "date"
     t.time     "start_time"
-    t.integer  "duration"
+    t.decimal  "duration"
     t.text     "notes"
     t.string   "language"
     t.float    "distance"
