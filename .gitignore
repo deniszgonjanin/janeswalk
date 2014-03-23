@@ -93,3 +93,7 @@ capybara-*html
 vendor/extensions/**/spec/dummy
 
 *.dat
+
+.ruby-gemset
+.ruby-version
+db/b002.dump
