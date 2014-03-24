@@ -1,0 +1,53 @@
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBP8WOi0ATaGgdhdR9MXzR2-lORJ9eF_ng&sensor=true">
+</script>
+<script type="text/javascript">
+  window.onload = function() {
+    markers = <%= raw(@markers) %>;
+
+    start_lat = '45.428'
+    start_long = '-75.7'
+    
+    var myOptions = {
+      center: new google.maps.LatLng(start_lat, start_long),
+      zoom: 11,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("mp_canvas"),
+        myOptions);
+
+    /*var ottawa = new google.maps.LatLng(lat, lng);
+
+    var marker = new google.maps.Marker({
+        position: ottawa, 
+        map: map,
+        title:"Central Experimental Farm"
+    }); */
+
+    walk_markers = []
+    for (var i=0; i < markers.length; i++){
+      marker = markers[i][0].split(',');
+      lat = marker.shift();
+      lng = marker.shift();
+
+      title = markers[i][1]
+      link = markers[i][2]
+
+      walk_markers[i] = new google.maps.Marker({
+        position: new google.maps.LatLng(lat, lng), 
+        map: map,
+        title: title,
+        url: link
+      });
+    }
+
+    for ( i = 0; i < walk_markers.length; i++ ) {
+      google.maps.event.addListener(walk_markers[i], 'click', function() {
+        window.location.href = this.url;  //changed from markers[i] to this[i]
+      });
+    }
+  }
+
+</script>
+
+<label><b>Location: <b> </label>
+<div name='mp_canvas' id="mp_canvas" ></div>

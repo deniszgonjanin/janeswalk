@@ -3,6 +3,7 @@
 <script type="text/javascript">
   window.onload = function() {
     var lat_long = "<%= map_marker %>";
+    var title = "<%= title %>"
     if (lat_long.indexOf(',') === -1) lat_long = '45.435,-75.7';
 
     lat_long_array = lat_long.split(',');
@@ -22,7 +23,7 @@
     var marker = new google.maps.Marker({
         position: ottawa, 
         map: map,
-        title:"Central Experimental Farm"
+        title: title
     }); 
   }
 </script>
