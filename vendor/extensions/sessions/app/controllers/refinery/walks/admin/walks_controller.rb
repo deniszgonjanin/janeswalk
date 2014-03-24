@@ -4,7 +4,9 @@ module Refinery
       class WalksController < ::Refinery::AdminController
 
         crudify :'refinery/walks/walk',
-                :title_attribute => 'guide_name', :xhr_paging => true
+                :title_attribute => 'guide_name', :xhr_paging => true,
+                									                :order => 'session_id DESC',
+                									                :sortable => false
 
       end
     end

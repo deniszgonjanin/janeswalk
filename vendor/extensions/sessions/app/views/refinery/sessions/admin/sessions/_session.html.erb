@@ -1,6 +1,6 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(session) -%>">
   <span class='title'>
-    <%= session.title %> [<%= session.status %>]
+    <b><%= truncate(session.title, length:60) %></b> [<%= session.status %>]
 
   </span>
   <span class='actions'>
@@ -17,4 +17,8 @@
         :confirm => t('message', :scope => 'refinery.admin.delete', :title => session.status),
         :method => :delete %>
   </span>
+
+  <ul>
+    <%= render :partial => 'walk', :collection => session.walks %>
+  </ul>
 </li>

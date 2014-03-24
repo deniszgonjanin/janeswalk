@@ -36,7 +36,7 @@ module Refinery
       validates :end_location, :presence => true
       validates :credentials, :presence => true
       
-      belongs_to :refinery_session
+      belongs_to :session, :class_name => '::Refinery::Sessions::Session'
       
       scope :published, :conditions => { :published => true }
       scope :english, :conditions => { :language => 'en' }
