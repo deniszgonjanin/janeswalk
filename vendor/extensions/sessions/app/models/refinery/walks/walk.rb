@@ -37,6 +37,8 @@ module Refinery
       validates :credentials, :presence => true
       
       belongs_to :session, :class_name => '::Refinery::Sessions::Session'
+
+      before_create :set_session_id
       
       scope :published, :conditions => { :published => true }
       scope :english, :conditions => { :language => 'en' }
@@ -47,6 +49,11 @@ module Refinery
       def img
         
       end
+
+      private
+        def set_session_id
+          self.session_id = Refinery::Sessions::Session.active.id
+        end
       
     end
   end

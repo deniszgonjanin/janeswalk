@@ -1,1 +1,13 @@
+<legend class="span6">Submit a new Walk</legend>
+
+<form class="form-horizontal span6" action="walks/edit">
+	<p>Have you lead a walk before and want to do so again? Review and submit a walk from a previous year:</p>
+	<label class="control-label" for="walks">Past Walk:</label>
+	<div class="controls" style="padding-bottom:16px">
+		<%= select_tag "walk", options_from_collection_for_select(Refinery::Walks::Walk.all, "id", "title") %>
+		<input class="btn" type="submit" value="Go"/>
+	</div>
+	<p>Or, fill the form bellow to submit a brand new walk: </p>
+</form>
+
 <%= render 'form' %>

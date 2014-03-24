@@ -22,6 +22,12 @@ module Refinery
       def new
         @walk = Walk.new
       end
+
+      def edit
+        @walk = Walk.find(params[:walk])
+
+        render action: 'edit'
+      end
       
       def create
         @walk = Walk.new(params[:walk])
