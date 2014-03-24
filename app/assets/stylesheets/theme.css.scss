@@ -1,0 +1,52 @@
+/* alignment styles */
+.text-align-left  {
+  text-align: left;
+}
+.text-align-center {
+  text-align: center;
+}
+.text-align-right {
+  text-align: right;
+}
+.text-align-justify {
+  text-align: justify;
+}
+
+/* block alignment styles */
+.image-align-left {
+  float: left;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+.image-align-right {
+  float: right;
+  margin-left: 6px;
+  margin-bottom: 6px;
+}
+
+/* font sizes */
+.font-size-small {
+  font-size: 0.75em;
+}
+.font-size-normal {
+  font-size: 1em;
+}
+.font-size-large {
+  font-size: 1.25em;
+}
+
+.image-outline {
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.image-caption {
+  font-style: italic;
+  color: black;
+  padding-left: 30px;
+}
