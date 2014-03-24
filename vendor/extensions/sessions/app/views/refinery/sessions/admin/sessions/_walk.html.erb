@@ -1,6 +1,6 @@
 <li class='clearfix record' id="<%= dom_id(walk) -%>">
   <span class='title'>
-    <%= walk.guide_name %>
+    <%= walk.guide_name %> <b> <%= "[not published]" unless walk.published %> </b>
 
   </span>
   <span class='actions'>

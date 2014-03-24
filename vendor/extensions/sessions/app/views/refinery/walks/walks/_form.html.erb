@@ -74,7 +74,7 @@
     <!-- Need map marker placement -->
     
     <div class="control-group">
-      <%= f.label :map_marker, 'Map: (Move the map marker to the starting location)', class: 'control-label' -%>
+      <%= f.label :map_marker, 'Map: (Drag the map marker to the starting location)' -%>
       <%= f.hidden_field :map_marker, :value => '45.435,-75.7' %>
       <%= render :partial => 'map_edit', :locals => {map_marker: '45.435,-75.7' } %>
     </div>
