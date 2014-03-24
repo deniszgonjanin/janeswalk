@@ -15,6 +15,8 @@ module Refinery
             :class_name => :'refinery/walks/walk',
             :title => 'guide_name'
           }
+          #don't show walks in the admin. Walks are shown as subitems of Sessions in the Session admin
+          plugin.hide_from_menu = true
           
         end
       end
