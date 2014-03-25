@@ -15,7 +15,7 @@ module Refinery
       def show
         @session = Session.find(params[:id])
 
-        @markers = @session.walks.collect {|walk| [walk.map_marker, walk.title, refinery.walks_walk_path(walk)]}
+        @markers = @session.walks.published.collect {|walk| [walk.map_marker, walk.title, refinery.walks_walk_path(walk)]}
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @session in the line below:
