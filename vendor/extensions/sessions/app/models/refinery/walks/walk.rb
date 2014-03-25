@@ -50,6 +50,16 @@ module Refinery
         
       end
 
+      def num_marshals
+        if !marshal_name.empty? and !marshal2_name.empty?
+          return 2
+        elsif !marshal_name.empty? or !marshal2_name.empty?
+          return 1
+        else
+          return 0
+        end
+      end
+
       private
         def set_session_id
           self.session_id = Refinery::Sessions::Session.active.id
