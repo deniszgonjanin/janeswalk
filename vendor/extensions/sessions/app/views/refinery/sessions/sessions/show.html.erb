@@ -7,7 +7,7 @@
     <section>
       <h2><%=raw @session.title %></h2>
     </section>
-    
+
     <section>
       <p>
         <%=raw @session.synopsis %>
@@ -18,40 +18,48 @@
       <h3>Map</h3>
       <%= render :partial => 'multi_map' %>
     </section>
-    
+
     <section>
       <h3 class="bottom_underline">Dates</h3>
       <p>
         <%=raw @session.timeframe %>
       </p>
     </section>
-    
-    <section>
-      <h3 class="bottom_underline">French Walks</h3>
-      <p>
-        <ul>
-        <% @session.walks.published.french.each do |walk| %>
-          <li>
-            <%= link_to(walk.title, refinery.walks_walk_path(walk)) %>
-          </li>
-        <% end %>
-        </ul>
-      </p>
-    </section>
-    
+
     <section>
       <h3 class="bottom_underline">English Walks</h3>
       <p>
         <ul>
-        <% @session.walks.published.english.each do |walk| %>
-          <li>
-            <%= link_to(walk.title, refinery.walks_walk_path(walk)) %>
-          </li>
+        <% @session.walks.published.english.group("date(date)").select("date(date)").order("date ASC").each do |day| %>
+          <p><%= day.date.strftime("%A,%B %d") %></p>
+          <% @session.walks_by_date(day.date).published.english.timeline.each do |walk| %>
+            <li>
+              <%= link_to("#{walk.start_time.strftime("%l:%M %p")} #{walk.title}", refinery.walks_walk_path(walk)) %>
+            </li>
+          <% end %>
+          <br>
         <% end %>
         </ul>
       </p>
     </section>
-    
+
+    <section>
+      <h3 class="bottom_underline">French Walks</h3>
+      <p>
+        <ul>
+        <% @session.walks.published.french.group("date(date)").select("date(date)").order("date ASC").each do |day| %>
+          <p><%= day.date.strftime("%A,%B %d") %></p>
+          <% @session.walks_by_date(day.date).published.french.timeline.each do |walk| %>
+            <li>
+              <%= link_to("#{walk.start_time.strftime("%l:%M %p")} #{walk.title}", refinery.walks_walk_path(walk)) %>
+            </li>
+          <% end %>
+          <br>
+        <% end %>
+        </ul>
+      </p>
+    </section>
+
   <% end %>
 
   <%= render '/refinery/content_page' %>
