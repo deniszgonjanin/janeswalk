@@ -27,12 +27,12 @@
     </section>
 
     <section>
-      <h3 class="bottom_underline">English Walks</h3>
+      <h3 class="bottom_underline">French Walks</h3>
       <p>
         <ul>
-        <% @session.walks.published.english.group("date(date)").select("date(date)").order("date ASC").each do |day| %>
+        <% @session.walks.published.french.group("date(date)").select("date(date)").order("date ASC").each do |day| %>
           <p><%= day.date.strftime("%A,%B %d") %></p>
-          <% @session.walks_by_date(day.date).published.english.timeline.each do |walk| %>
+          <% @session.walks_by_date(day.date).published.french.timeline.each do |walk| %>
             <li>
               <%= link_to("#{walk.start_time.strftime("%l:%M %p")} #{walk.title}", refinery.walks_walk_path(walk)) %>
             </li>
@@ -44,12 +44,12 @@
     </section>
 
     <section>
-      <h3 class="bottom_underline">French Walks</h3>
+      <h3 class="bottom_underline">English Walks</h3>
       <p>
         <ul>
-        <% @session.walks.published.french.group("date(date)").select("date(date)").order("date ASC").each do |day| %>
+        <% @session.walks.published.english.group("date(date)").select("date(date)").order("date ASC").each do |day| %>
           <p><%= day.date.strftime("%A,%B %d") %></p>
-          <% @session.walks_by_date(day.date).published.french.timeline.each do |walk| %>
+          <% @session.walks_by_date(day.date).published.english.timeline.each do |walk| %>
             <li>
               <%= link_to("#{walk.start_time.strftime("%l:%M %p")} #{walk.title}", refinery.walks_walk_path(walk)) %>
             </li>
